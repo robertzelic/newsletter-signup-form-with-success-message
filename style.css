@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --tomato: hsl(4, 100%, 67%);
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--dark-slate-grey);
+  font-weight: 400;
+}
+
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+  vertical-align: middle;
+}
+
+ul {
+  list-style-type: none;
+}
+
+fieldset {
+  border: none;
+}
+
+p {
+  line-height: 1.5rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.card {
+  display: grid;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image img {
+  width: 100%;
+}
+
+.content {
+  padding: 2rem 1.6rem;
+}
+
+.stay-updated {
+  font-size: 2.5rem;
+  margin-block: 1rem 2rem;
+  font-weight: 700;
+}
+
+.description {
+  margin-block: 1.2rem;
+}
+
+.content-list {
+  margin-block: 1.5rem 2.2rem;
+}
+
+.content-list-item {
+  margin-block: 0.7rem;
+  display: flex;
+  gap: 1rem;
+  align-items: start;
+}
+
+.email-form.error .email-label .error-msg {
+  visibility: visible;
+  opacity: 1;
+}
+
+.email-form.error input {
+  border: 1px solid var(--tomato);
+  color: var(--tomato);
+  background-color: rgba(255, 3, 3, 0.106);
+}
+
+.email-form.error input::placeholder {
+  color: var(--tomato);
+}
+
+.email-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.email-label .error-msg {
+  color: var(--tomato);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.email,
+.btn {
+  display: block;
+  inline-size: 100%;
+}
+
+.email {
+  margin-block: 0.3rem 1rem;
+  padding: 1.1rem 1rem;
+  border: 1px solid var(--grey);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border 0.2s ease-in;
+}
+
+.email:focus {
+  border: 1px solid var(--dark-slate-grey);
+}
+
+.btn {
+  background-color: var(--charcoal-grey);
+  margin-block: 1.5rem;
+  color: var(--white);
+  padding-block: 1.2rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-image 1s ease;
+}
+
+.btn:hover {
+  background-image: linear-gradient(to right, rgb(255, 83, 121), var(--tomato));
+  box-shadow: 0 1rem 1rem hsla(4, 100%, 67%, 0.288);
+}
+
+.subscribe-card {
+  inline-size: 100%;
+  max-inline-size: 31.25rem;
+  padding: 1.3rem;
+  background-color: var(--white);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.success-img {
+  margin-block-end: 2.5rem;
+}
+
+.subscribe-title {
+  font-size: 2.5rem;
+  line-height: 2.4rem;
+  font-weight: 700;
+  margin-block: 1.6rem;
+}
+
+.subscribe-card .btn {
+  margin-block-start: 16.375rem;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+@media (min-width: 50em) {
+  body {
+    background-color: var(--dark-slate-grey);
+    display: grid;
+    min-block-size: 100vh;
+    place-items: center;
+  }
+
+  .card {
+    padding: 1.5rem;
+    border-radius: 2rem;
+    background-color: var(--white);
+    max-inline-size: 58rem;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .content {
+    padding: 2.5rem;
+  }
+
+  .image {
+    order: 1;
+  }
+
+  .stay-updated {
+    font-size: 3.5rem;
+    margin-block: 2rem 2.5rem;
+  }
+
+  .subscribe-card {
+    padding: 3rem;
+    border-radius: 2rem;
+  }
+
+  .subscribe-title {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+  }
+
+  .subscribe-card .btn {
+    margin-block: 2.5rem 1rem;
+  }
+}
